@@ -1,8 +1,6 @@
 ## UML component diagram
 
-![uml diagram]https://github.com/akykaan/Camp-React-Hrms/blob/c14676236276a3946a8558e9b0b8c837edbb34da/public/diagram.png
-
-
+![uml diagram](https://github.com/akykaan/Camp-React-Hrms/blob/master/public/diagram.png?raw=true)
 
 # Getting Started with Create React App
 
