@@ -1,3 +1,9 @@
+## UML component diagram
+
+[!]https://github.com/akykaan/Camp-React-Hrms/blob/c14676236276a3946a8558e9b0b8c837edbb34da/public/diagram.png
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
