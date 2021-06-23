@@ -1,7 +1,13 @@
 import React from "react";
-import { Header, Icon, Image, Menu, Segment, Sidebar } from "semantic-ui-react";
+import { Icon, Menu, Sidebar } from "semantic-ui-react";
+
 
 export default function Side() {
+
+  const returnHomePage=(props)=>{
+    console.log("ana sayfa: ")
+  }
+
   return (
     <div>
       <Sidebar
@@ -13,7 +19,7 @@ export default function Side() {
         visible
         width="thin"
       >
-        <Menu.Item as="a">
+        <Menu.Item onClick={(e)=>returnHomePage()} as="a">
           <Icon name="home" />
           Ana Sayfa
         </Menu.Item>
