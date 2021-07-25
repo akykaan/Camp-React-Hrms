@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form, Checkbox } from "semantic-ui-react";
-import JobAdvertService from "../services/JobAdvertService";
+import JobAdvertService from "../services/jobAdvertService";
 
 export default function JobAdvertList() {
   const [appDate, setAppDate] = useState("");
@@ -11,12 +11,10 @@ export default function JobAdvertList() {
   const [typeOfWork, setTypeOfWork] = useState("");
   const [workingTime, setWorkingTime] = useState("");
   
-
-
   const handleSubmit = () => {
     const data = {
-      appDate: appDate,
-      appDateLine: appDateLine,
+      applicationDate: appDate,
+      applicationDeadline: appDateLine,
       openPosition: openPosition,
       cityName: cityName,
       jobDescription: jobDescription,
@@ -43,8 +41,6 @@ export default function JobAdvertList() {
 
   const handleChange = (event, { value }) => setTypeOfWork(value);
   const handleChangeForWorkTime = (event, { value }) => setWorkingTime(value);
-
-  // buton fonk içine almak lazım burayı
 
   return (
     <div>

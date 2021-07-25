@@ -25,7 +25,7 @@ export default function Navi() {
               <SignedIn signOut={handleSignOut} />
             ) : (
               <SignedOut signIn={handleSignIn}/>
-            )}
+            )}            
           </Menu.Menu>
         </Container>
       </Menu>

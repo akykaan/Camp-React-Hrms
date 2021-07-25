@@ -29,7 +29,7 @@ export default function CandidateList() {
         </Table.Header>
         <Table.Body>
           {
-            // js kodu gelen veri kalan olusturur
+            
             candidates.map((candidate) => (
               <Table.Row key={candidate.id}>
                 <Table.Cell>{candidate.id}</Table.Cell>

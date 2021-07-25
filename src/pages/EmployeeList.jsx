@@ -1,35 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { Button, Icon, Menu, Table } from "semantic-ui-react";
-import HrmsStaffService from "../services/hrmsStaffService";
-import JobAdvertService from "../services/JobAdvertService";
+import { Button, Icon, Menu, Table, Header } from "semantic-ui-react";
+import EmployeeService from "../services/employeeService";
+import JobAdvertService from "../services/jobAdvertService";
 
-export default function HrmsStaffList() {
-  // job advert list kısmından iş ilanı eklendiğinde
-  // bu başka bir tabloda tutulsun
-  // o tabloyu buraya çekip
-  // personelin onayı gereksin
-  // onay butonuna basıldığı an itibari ile
-  // onaylanmış iş ilanları tablosuna geçsin
-  // onu sonra listele
-
-  // veya
-
-  // job advert list kısmından ekleyen iş ilanlarını
-  // aktif true olarak tutalım true olanlar listelensin
-  // false olanlar ise beklemede kalsın
-  // gelen ilanın idsini al update işlemi
-  // ile false yerine true yaz
+export default function EmployeeList() {
   // formatDate
   const [activeJobAdverts, setActiveJobAdverts] = useState([]);
-  const [state, setstate] = useState()
+  const [state, setstate] = useState();
 
   useEffect(() => {
-    let hrmsStaffService = new HrmsStaffService();
-    hrmsStaffService
+    let employeeService = new EmployeeService();
+    employeeService
       .getAllUnconfirmedJobAdverts()
       .then((result) => {
         setActiveJobAdverts(result.data.data);
-        console.log("active:", result.data);        
+        console.log("active:", result.data);
       })
       .catch((error) => {
         console.log(error);
@@ -37,14 +22,14 @@ export default function HrmsStaffList() {
       });
   }, [state]);
 
-  const getAllJobAdvert = (jobAdvertId) => {    
+  const getAllJobAdvert = (jobAdvertId) => {
     let jobAdvertService = new JobAdvertService();
     jobAdvertService
       .updateJobAdvert(jobAdvertId)
       .then((response) => {
         console.log("basarılı: ", response);
         console.log("basarılı: ", response.request);
-        setstate(jobAdvertId)
+        setstate(jobAdvertId);
       })
       .catch((error) => {
         console.log("hata update: ", error.response);
@@ -52,9 +37,12 @@ export default function HrmsStaffList() {
         console.log("hata update: ", error.message);
       });
   };
+  
+  
 
   return (
     <div>
+      <Header>Onaylanmamış iş ilanları</Header>
       <Table celled>
         <Table.Header>
           <Table.Row>
